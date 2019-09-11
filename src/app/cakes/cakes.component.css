@@ -1,0 +1,22 @@
+ul.cakes {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.cakes li {
+    cursor: pointer;
+    margin: 5px;
+    color: #ff96cb;
+}
+
+.cakes li:hover {
+    color: #B35785;
+}
+
+h2 {
+    color: #c10672;
+}
+
+.selectedCake {
+    color: #ff96cb;
+}
