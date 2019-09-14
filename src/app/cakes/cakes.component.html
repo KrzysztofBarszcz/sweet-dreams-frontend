@@ -1,0 +1,13 @@
+<h2>Available cakes:</h2>
+<ul class="cakes">
+    <li *ngFor="let cake of cakes" (click)="onSelect(cake)">
+        <span>{{cake.id}}</span> {{cake.name}}
+    </li>
+</ul>
+<div class="selectedCake" *ngIf="selectedCake">
+    <h2>{{selectedCake.name | titlecase }} details:</h2>
+    <p>Id: {{ selectedCake.id }}</p>
+    <p>Name: {{ selectedCake.name }}</p>
+    <p>Price: {{ selectedCake.price }}</p>
+    <p>Description: {{ selectedCake.description }}</p>
+</div>
