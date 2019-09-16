@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CAKES } from '../model/mock-cakes'
 import { Cake } from '../model/cake';
+import { CakeService } from '../cake.service';
 
 @Component({
   selector: 'app-cakes',
@@ -9,15 +9,20 @@ import { Cake } from '../model/cake';
 })
 export class CakesComponent implements OnInit {
 
-  cakes = CAKES;
+  cakes: Cake[];
   selectedCake: Cake;
 
-  constructor() { }
+  constructor(private cakeService: CakeService) { }
 
   ngOnInit() {
-
+    this.getCakes()
   }
   onSelect(cake: Cake) {
     this.selectedCake = cake;
+  }
+
+  getCakes() {
+    this.cakeService.getCakes()
+      .subscribe(cakes => this.cakes = cakes)
   }
 }
